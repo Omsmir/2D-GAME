@@ -1,0 +1,358 @@
+:root {
+  font-family: "Baloo 2", cursive;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242323;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --root-color: #be8f18;
+  --root-font: "Baloo 2", cursive;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.counter {
+  position: absolute;
+  width: 320px;
+  min-height: 100px;
+  top: 0;
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  z-index: 2;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: capitalize;
+  background: var(--root-color);
+}
+.counter .counter-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.counter .counter-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.counter-buttons .new-game {
+  background-image: url('/src/assets/reset.png');
+  background-position: center;
+  background-size: cover;
+}
+.counter-buttons button {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: #5a440c;
+  color: whitesmoke;
+  border: 1px solid gray;
+  transition: 0.1s ease-in-out all;
+
+}
+.counter-buttons button:hover {
+  transform: scale(1.06);
+  background-color: #46350b;
+}
+.counter h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+}
+.counter h4 p {
+  margin-left: 10px;
+  color: black !important;
+}
+.counter div {
+  display: flex;
+  margin-left: 10px;
+}
+.counter p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.counter p:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.counter p:nth-child(1) {
+  color: red;
+}
+.counter p:nth-child(2) {
+  color: rgb(136, 14, 120);
+}
+.counter p:nth-child(3) {
+  color: rgb(44, 187, 44);
+}
+.counter p:nth-child(4) {
+  color: rgba(19, 19, 150, 0.685);
+}
+
+.dialog {
+  position: absolute;
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.start-screen {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(#7ed957, #5bbf4a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.game-title {
+  font-family: "Baloo 2", cursive;
+  font-size: 30px;
+  color: #2f4f2f;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.name-input {
+  min-width: 260px;
+  padding: 12px 16px;
+  font-size: 18px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+}
+.error_message {
+  color: rgb(192, 17, 17);
+  font-weight: 600;
+}
+.name-input::placeholder {
+  color: #999;
+}
+
+.start-btn {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: #ffd43b;
+  font-family: "Baloo 2", cursive;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #e6b800;
+}
+
+.start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 0 #e6b800;
+}
+
+.layout {
+  position: relative;
+  height: 850px;
+  width: 1000px;
+  padding: 20px;
+  overflow: hidden;
+  background: green;
+  border-radius: 25px;
+  background: url("/src//assets/grass.png");
+}
+
+.main_board {
+  position: absolute;
+  width: 6000px;
+  height: 6000px;
+  border: 1px solid rgba(44, 41, 41, 0.897);
+}
+
+.character_layout {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.character_layout p {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.character {
+  position: relative;
+  width: 85px;
+  height: 95px;
+}
+
+.flower_asset {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s ease-in-out all;
+  animation: flower_animate alternate 1s ease-in-out infinite;
+  z-index: 10;
+}
+
+.static_asset {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes flower_animate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog-box {
+  position: relative;
+  width: 320px;
+  padding: 24px 20px;
+  background: var(--root-color);
+  border-radius: 20px;
+  font-family: var(--root-font);
+  font-size: 18px;
+  text-align: center;
+  animation: popIn 0.25s ease-out;
+}
+
+.dialog-message {
+  margin-top: 10px;
+  color: whitesmoke;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  color: whitesmoke;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* loader */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(#7ed957, #5bbf4a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loading-box {
+  background: var(--root-color);
+  padding: 24px 32px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.loading-text {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.loading-bar {
+  width: 260px;
+  height: 14px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ffd43b, #ff922b);
+  border-radius: 10px;
+  transition: width 0.1s linear;
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+
+
+/* sm screen */
+@media (min-width:640px) {
+  .game-title{
+    font-size: 40px;
+  }
+  .name-input{
+    min-width: 360px;
+  }
+}
