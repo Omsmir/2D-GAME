@@ -53,7 +53,7 @@ ${flowers_collected}
 const character = `
  <div class='character_layout'>
  <p class='character_name'>tabark</p>
- <img src="/src/assets/character/bubu.png" class='character' />
+ <img src="/2D-GAME/assets/character/bubu.png" class='character' />
  </div>
 `;
 

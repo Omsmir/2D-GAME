@@ -98,7 +98,7 @@ export const setFlowers = (world: HTMLDivElement) => {
     flower_node.style.left = `${flower.x}px`;
     flower_node.style.top = `${flower.y}px`;
 
-    flower_node.src = `/src/assets/spirts/${flower.color}_flower.png`;
+    flower_node.src = `/2D-GAME/assets/spirts/${flower.color}_flower.png`;
     flower_node.classList = `flower_asset flower_${flower.id} `;
 
     world.appendChild(flower_node);
@@ -210,7 +210,7 @@ export const setStaticAssets = (world: HTMLDivElement) => {
       asset_node.style.zIndex = "100";
     }
 
-    asset_node.src = `/src/assets/spirts/${asset.color}_${asset.type}.png`;
+    asset_node.src = `/2D-GAME/assets/spirts/${asset.color}_${asset.type}.png`;
 
     world.appendChild(asset_node);
   });

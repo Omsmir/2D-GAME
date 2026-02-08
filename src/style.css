@@ -57,7 +57,7 @@ body {
 }
 
 .counter-buttons .new-game {
-  background-image: url('/src/assets/reset.png');
+  background-image: url('/assets/reset.png');
   background-position: center;
   background-size: cover;
 }
@@ -192,7 +192,7 @@ body {
   overflow: hidden;
   background: green;
   border-radius: 25px;
-  background: url("/src//assets/grass.png");
+  background: url("/assets/grass.png");
 }
 
 .main_board {
